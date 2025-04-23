@@ -5,6 +5,12 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from Backend.backend.db import Base
+from Backend.models.CartItems import CartItems
+from Backend.models.Categories import Categories
+from Backend.models.OrderItems import OrderItems
+from Backend.models.Orders import Orders
+from Backend.models.Products import Products
+from Backend.models.Users import Users
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

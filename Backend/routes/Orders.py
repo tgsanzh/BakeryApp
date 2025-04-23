@@ -90,10 +90,9 @@ def get_user_orders(
 def update_order_status(
     order_id: int,
     status_update: UpdateOrderStatus,
-    db: Session = Depends(get_db),
-    user_id: int = Depends(get_current_user)
+    db: Session = Depends(get_db)
 ):
-    order = db.query(Orders).filter(Orders.order_id == order_id, Orders.user_id == user_id).first()
+    order = db.query(Orders).filter(Orders.order_id == order_id).first()
     if not order:
         raise HTTPException(status_code=404, detail="Order not found")
 
